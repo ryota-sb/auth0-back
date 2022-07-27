@@ -1,7 +1,8 @@
-FROM ruby:2.5
+FROM ruby:2.6.6
 
 RUN apt-get update -qq && \
-    apt-get install -y build-essential nodejs
+    apt-get install -y build-essential nodejs && \
+    bundle config set force_ruby_platform true
 
 RUN mkdir /work
 
